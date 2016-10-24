@@ -19,7 +19,7 @@ class StockContainer extends React.Component{
   render(){
 
     return (
-    <div className='col-md-8 center-block'>
+    <div className='col-md-8'>
 
       <StockSearch/>
         <br></br>

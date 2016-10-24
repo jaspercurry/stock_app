@@ -40,10 +40,12 @@ class HistoryChart extends React.Component {
       )
     }
 
+
+
   render() {
     return(
       <div id="line_size">
-          <Line data={this.data()} width={300} height={300} />
+          <Line data={this.data()}   />
         </div>
     )
   }

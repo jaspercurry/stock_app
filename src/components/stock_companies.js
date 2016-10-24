@@ -13,7 +13,7 @@ class StockCompanies extends React.Component {
     this.hideGraph = this.hideGraph.bind(this)
   }
 
-  removeCompany(e, symbol) {
+  removeCompany(e, symbol) { // should refactor and make another action called remove companies to take the logic out of the component
     e.preventDefault()
     var index = this.props.companies.indexOf(symbol)
     var new_companies = Object.assign([], this.props.companies)
@@ -57,8 +57,8 @@ class StockCompanies extends React.Component {
               {this.props.data.map((company) => { return (
                 <tr>
                   <td>{company.description}</td>
-                  <td>${company.ask}</td>
-                  <td>{company.change_percentage}%</td>
+                  <td>${company.ask.toFixed(2)}</td>
+                  <td>{company.change_percentage.toFixed(2)}%</td>
                   <td> <a onClick={(e) => this.removeCompany(e, company.symbol)} href="">X</a></td>
                   <td> <a onClick={(e) => this.showHistory(e, company.symbol)} href="">Show History</a></td>
                 </tr>
@@ -69,7 +69,7 @@ class StockCompanies extends React.Component {
       </div>
       )
     } else {
-      return null
+      return null // needed to have return value if both of the above returned false.
     }
   }
 
@@ -77,7 +77,7 @@ class StockCompanies extends React.Component {
 
 function mapStateToProps(state) {
     if (state.data.quotes) {
-        if ( state.data.quotes.quote instanceof Array ) {
+        if ( state.data.quotes.quote instanceof Array ) { // should refector and move into reducer - the API sends inconsistent data - object for one company and array for multiple compaies
           return {data: state.data.quotes.quote,
                   companies: state.companies}
         } else {

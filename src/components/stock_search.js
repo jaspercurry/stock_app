@@ -18,7 +18,7 @@ class StockSearch extends React.Component{
     var tickers = [...this.props.companies, this.refs.ticker.value.toUpperCase()]
     this.refs.ticker.value = ""
     this.props.actions.setCompanies(tickers)
-    this.fetchCompaniesAction(tickers)
+    this.fetchCompaniesAction(tickers) // had issues with the setCompanies action - had to pass in tickers object to fetchCompaniesAction instead of calling on this.props.companies
   }
 
   fetchCompaniesAction(tickers) {
@@ -26,8 +26,8 @@ class StockSearch extends React.Component{
       var formattedTickers = tickers.join()
       this.props.actions.fetchData(formattedTickers)
     }
-    setTimeout(() =>this.fetchCompaniesAction(this.props.companies), 6000);
-    setInterval(console.log(this.props.companies), 6000);
+    setTimeout(() =>this.fetchCompaniesAction(this.props.companies), 60000); // refreshes stock data every minute 
+    setInterval(console.log(this.props.companies), 60000);
   }
 
 

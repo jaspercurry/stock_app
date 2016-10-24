@@ -1,7 +1,7 @@
-var token = "Ask Jasper"
+var token = "Bearer trl0qhB04I6CL7EXAnDFsDc6JFKy" // should hide
 
 
-export function fetchTickers(term) {
+export function fetchTickers(term) { // currently not used - will be used to autosuggest ticker suggestions based on company name
   const url = "https://sandbox.tradier.com/v1/markets/search?q="+term
   const tickers = fetch(url, {
   headers: {
