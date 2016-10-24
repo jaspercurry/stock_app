@@ -40,12 +40,31 @@ class HistoryChart extends React.Component {
       )
     }
 
+    options() {
+      return (
+        {
+          scales: {
+              yAxes: [
+                {
+                    ticks: {
+                       callback: function(label, index, labels) {
+                         return '$' + label;
+                       }
+                    }
+                }
+              ]
+          },
+      }
+
+      )
+    }
+
 
 
   render() {
     return(
       <div id="line_size">
-          <Line data={this.data()}   />
+          <Line data={this.data()} options={this.options()}  />
         </div>
     )
   }
