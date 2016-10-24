@@ -1,10 +1,12 @@
+var token = "Ask Jasper"
+
 
 export function fetchTickers(term) {
   const url = "https://sandbox.tradier.com/v1/markets/search?q="+term
   const tickers = fetch(url, {
   headers: {
     Accept: "application/json",
-    Authorization: "Bearer trl0qhB04I6CL7EXAnDFsDc6JFKy"
+    Authorization: token
   }
 }).then(response => { return response.json()}).then(tickerPayLoad => { return tickerPayLoad})
 
@@ -20,7 +22,7 @@ export function fetchData(companies) {
     const stockInfo = fetch(url, {
     headers: {
       Accept: "application/json",
-      Authorization: "Bearer trl0qhB04I6CL7EXAnDFsDc6JFKy"
+      Authorization: token
     }
   }).then(response => { return response.json()}).then(tickerPayLoad => { return tickerPayLoad})
     return { type: 'FETCH_DATA',
@@ -44,10 +46,9 @@ export function fetchHistory(company) {
   const history = fetch(url, {
   headers: {
     Accept: "application/json",
-    Authorization: "Bearer trl0qhB04I6CL7EXAnDFsDc6JFKy"
+    Authorization: token
   }
 }).then(response => { return response.json()}).then(tickerPayLoad => { return tickerPayLoad})
-debugger
   return { type: 'FETCH_HISTORY',
             payload: history
           }

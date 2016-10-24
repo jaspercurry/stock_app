@@ -1,12 +1,8 @@
 import React from 'react';
-import {FormGroup, FormControl, Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import * as actions from '../actions'
 import { bindActionCreators } from 'redux'
 import HistoryChart from "./history_chart"
-
-
-
 
 class StockCompanies extends React.Component {
   constructor(props) {

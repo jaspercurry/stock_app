@@ -9,7 +9,7 @@ class HistoryChart extends React.Component {
     }
 
     data() {
-      debugger
+
       return({
             labels: this.props.history.map((month) => month.date),
             datasets: [

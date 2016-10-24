@@ -43,9 +43,7 @@ class StockSearch extends React.Component{
 
 function mapStateToProps(state) {
   return (
-    {tickers: state.tickers,
-    data: state.data,
-    companies: state.companies}
+    {companies: state.companies}
   )
 }
 
