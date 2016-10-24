@@ -26,8 +26,7 @@ class StockSearch extends React.Component{
       var formattedTickers = tickers.join()
       this.props.actions.fetchData(formattedTickers)
     }
-    setTimeout(() =>this.fetchCompaniesAction(this.props.companies), 60000); // refreshes stock data every minute 
-    setInterval(console.log(this.props.companies), 60000);
+    setTimeout(() =>this.fetchCompaniesAction(this.props.companies), 60000); // refreshes stock data every minute - there is a bug that causes too many requests to me sent. Need to refactor. 
   }
 
 

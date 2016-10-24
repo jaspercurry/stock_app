@@ -4,7 +4,7 @@ import StockContainer from './components/stock_container'
 
 class App extends Component {
   render() {
-    console.log("Hello there! To use this app you need a token for the tradier API. Ask Jasper for it! :)");
+    console.log("Hello :)");
     return (
       <div className="container">
           <h1>Stocks App</h1>
